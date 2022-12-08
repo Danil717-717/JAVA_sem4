@@ -1,0 +1,67 @@
+// Написать программу, определяющую правильность расстановки скобок в выражении.
+//
+//a+(d*3) - истина
+//\[a+(1*3) - ложь
+//\[6+(3*3)] - истина
+//{a}\[+\]{(d*3)} - истина
+//<{a}+{(d*3)}> - истина
+//{a+]}{(d*3)} - ложь
+
+
+public class HW_Task03 {
+
+
+    public static boolean parsing(String str)                //объявление функции, которая проверяет правильность последовательности
+    {
+        int temp1 = 0;                                       //задаём переменную-счётчик 1 для проверки
+        int temp2 = 0;
+        int temp3 = 0;
+        int temp4 = 0;
+
+        for (int i = 0; i < str.length(); i++) {             //от 0 до длины строки не включительно
+            String one_symbol = str.substring(i, i + 1);     //получаем символ
+            if (one_symbol.equals("(")) {                    //проверяем является ли он открывающей скобкой
+               temp1++;                            //если да, то наращиваем счётчик
+            } else if (one_symbol.equals(")")) {                                       //иначе
+                temp1--;                          //увеличиваем счётчик 2 на единицу
+            } else if (one_symbol.equals("[")) {                    //проверяем является ли он открывающей скобкой
+                temp2++;                            //если да, то наращиваем счётчик
+            } else if (one_symbol.equals("]")) {                                       //иначе
+                temp2--;                          //увеличиваем счётчик 2 на единицу
+            }
+            if (one_symbol.equals("{")) {                    //проверяем является ли он открывающей скобкой
+                temp3++;                            //если да, то наращиваем счётчик
+            } else if (one_symbol.equals("}")) {                                       //иначе
+                temp3--;                           //увеличиваем счётчик 2 на единицу
+            }
+            if (one_symbol.equals("<")) {                    //проверяем является ли он открывающей скобкой
+                temp4++;                            //если да, то наращиваем счётчик
+            } else if (one_symbol.equals(">")) {                                       //иначе
+                temp4--;                         //увеличиваем счётчик 2 на единицу
+            }
+
+        }
+
+        if (temp1 == 0 & temp2 == 0 & temp3 == 0 & temp4 == 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static void main (String[]args){  //основной метод программы
+        String var = "a+(d*3)";  //задаём скобочную последовательность
+        System.out.println(parsing(var));  //выводим результат метода с передачей значения
+        String var2 = "[a+(1*3)";
+        System.out.println(parsing(var2));
+        String var3 = "[6+(3*3)]";
+        System.out.println(parsing(var3));
+        String var4 = "{a}\\[+\\]{(d*3)}";
+        System.out.println(parsing(var4));
+        String var5 = "<{a}+{(d*3)}>";
+        System.out.println(parsing(var5));
+        String var6 = "{a+]}{(d*3)}";
+        System.out.println(parsing(var6));
+    }
+}
