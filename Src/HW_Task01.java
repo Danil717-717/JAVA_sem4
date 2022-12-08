@@ -29,3 +29,24 @@ public class HW_Task01 {
     
 }
  //////// Согласен не самый лучший вариант
+//////    вар 2
+
+// int[] listMas = {5, 3, 2, 6, 7, 4, 9, 1};
+//         System.out.print("List = [");
+//         for (int i = 0; i < 8; i++) {
+//             System.out.print(listMas[i] + ", ");
+//         }
+//         System.out.println("]");
+//         System.out.println();
+//         LinkedList<Integer> linkList = new LinkedList<>();
+
+//         for (Integer temp : listMas) {
+//             linkList.add(temp);
+//         }
+
+//         int temp = 0;
+//         while (temp != linkList.size() - 1) {
+//             linkList.add(linkList.size() - temp, linkList.getFirst());
+//             linkList.removeFirst();
+//             temp++;
+//         }
