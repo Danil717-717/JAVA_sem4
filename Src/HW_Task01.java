@@ -1,4 +1,4 @@
-//Ïóñòü äàí LinkedList ñ íåñêîëüêèìè ýëåìåíòàìè. Ðåàëèçóéòå ìåòîä, êîòîðûé âåðíåò “ïåðåâåðíóòûé” ñïèñîê.
+//Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
 
 import java.util.LinkedList;
 
@@ -6,15 +6,15 @@ public class HW_Task01 {
     public static void main(String[] args) {
 
         LinkedList<String> linkl = new LinkedList<String>();
-        linkl.add("ïåðâûé");
-        linkl.add("âòîðîé");
-        linkl.add("òðåòèé");
-        linkl.add("÷åòâåðòûé");
-        linkl.add("ïÿòûé");
-        System.out.println("Ñïèñîê äî: " + linkl);
+         linkl.add("первый");
+        linkl.add("второй");
+        linkl.add("третий");
+        linkl.add("четвертый");
+        linkl.add("пятый");
+        System.out.println("Список до: " + linkl);
 
         linkl = reverseLinkedList(linkl);
-        System.out.println("Ñïèñîê ïîñëå: " + linkl);
+        System.out.println("Список после: " + linkl);
     }
 
     public static LinkedList<String> reverseLinkedList(LinkedList<String> linkl) {
@@ -28,4 +28,4 @@ public class HW_Task01 {
     }
     
 }
- //////// Ñîãëàñåí íå ñàìûé ëó÷øèé âàðèàíò
+ //////// Согласен не самый лучший вариант
